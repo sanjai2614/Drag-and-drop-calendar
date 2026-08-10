@@ -4,6 +4,7 @@ import dayGridPlugin from "@fullcalendar/daygrid";
 import interactionPlugin, { Draggable } from "@fullcalendar/interaction";
 import { useEffect } from "react";
 import { excelExport } from "./excel";
+import {exportPdf} from './pdf'
 
 const Calender = () => {
   const [input, setInput] = useState("");
@@ -121,6 +122,12 @@ const Calender = () => {
   className="rounded-lg bg-green-600 px-4 text-white hover:bg-green-700"
 >
   Export Excel
+</button>
+<button
+  onClick={() => exportPdf(events)}
+  className="rounded-lg bg-red-600 px-4 py-2 text-white hover:bg-red-700"
+>
+  Export PDF
 </button>
   </div>
   {/* calendar */}
